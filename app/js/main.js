@@ -1,86 +1,107 @@
 /**
- * ==============================================================================
- * IMPORTS / CONSTANTS
- * ==============================================================================
- */
-const generatedColors = document.getElementById("generatedColors");
-const mixedCorrectColor = document.getElementById("mixedCorrectColor");
-
-/**
  * ******************************************************************************************
- * Get random number for rgb color
+ * Get random number for RGB color
  * ******************************************************************************************
  */
 
-function getRandomNumber() {
-  return Math.floor(Math.random() * 256);
+function getRandomNumber(number) {
+  return Math.floor(Math.random() * number);
 }
 
 /**
  * ******************************************************************************************
- * Generate random rgb color
+ * Generate random RGB color
  * ******************************************************************************************
  */
 
-function genRandomColor() {
-  return `rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`;
+function genRandomRgbColor() {
+  const maxColorValue = 256;
+  return `rgb(${getRandomNumber(maxColorValue)}, ${getRandomNumber(
+    maxColorValue
+  )}, ${getRandomNumber(maxColorValue)})`;
 }
 
 /**
  * ******************************************************************************************
- * Add color to color-block, if the color already exists, generate a new one
+ * Generate random colors array
  * ******************************************************************************************
  */
 
-let generatedColorsArray = [];
+function genRandomColorsArray(arrayLength) {
+  // Create an empty array to store the colors
+  let colorsArray = [];
 
-function addGeneratedColors() {
-  // Select all elements with the class name "colors-block"
-  let colorBlocks = generatedColors.children;
-
-  // Loop over the selected elements
-  for (let i = 0; i < colorBlocks.length; i++) {
-    // Generate a random color
-    let randomColor = genRandomColor();
+  // Loop over the array length
+  for (let i = 0; i < arrayLength; i++) {
+    // Generate a random rgb color
+    let randomColor = genRandomRgbColor();
 
     // Check if the color already exists
-    while (generatedColorsArray.includes(randomColor)) {
+    while (colorsArray.includes(randomColor)) {
       // If the color already exists, generate a new one
-      randomColor = genRandomColor();
+      randomColor = genRandomRgbColor();
     }
 
-    // Add the new color to the array of generated colors
-    generatedColorsArray.push(randomColor);
-
-    // Assign the random color as the background color of the current element
-    colorBlocks[i].style.backgroundColor = randomColor;
+    // Add the new color to the array of colors
+    colorsArray.push(randomColor);
   }
-}
 
-addGeneratedColors();
+  return colorsArray;
+}
 
 /**
  * ******************************************************************************************
- * Mix the last 3 colors of the generated colors and add to the mixedCorrectColor block
+ * Add the colors to the DOM
  * ******************************************************************************************
  */
 
-function mixColors() {
-  // Get the last 3 colors of the generated colors array
-  let last3Colors = generatedColorsArray.slice(-3);
+const colorsArray = genRandomColorsArray(6);
 
-  // Get the rgb values of the last 3 colors
-  let rgbValues = last3Colors.map((color) => {
-    return color.match(/\d+/g);
-  });
-
-  // Calculate the average of the rgb values
-
-  /**
-   * ******************************************************************************************
-   * HIER BEZIG
-   * ******************************************************************************************
-   */
+function addColorsToDom(colorsArray) {
+  document
+    .querySelectorAll("#generatedColors .colors-block")
+    .forEach((color, index) => {
+      color.style.backgroundColor = colorsArray[index];
+    });
 }
 
-mixColors();
+addColorsToDom(colorsArray);
+
+/**
+ * ******************************************************************************************
+ * Get the correct color
+ * ******************************************************************************************
+ */
+
+function mixColors(colorsArray) {
+  const mixedColor = {
+    r: 0,
+    g: 0,
+    b: 0,
+  };
+
+  colorsArray.slice(0, 3).forEach((color) => {
+    const colorValues = color
+      .replace("rgb(", "")
+      .replace(")", "")
+      .split(", ")
+      .map((value) => parseInt(value));
+
+    mixedColor.r += colorValues[0];
+    mixedColor.g += colorValues[1];
+    mixedColor.b += colorValues[2];
+  });
+
+  console.log(colorsArray);
+  console.log(mixedColor);
+
+  mixedColor.r = Math.floor(mixedColor.r / 3);
+  mixedColor.g = Math.floor(mixedColor.g / 3);
+  mixedColor.b = Math.floor(mixedColor.b / 3);
+
+  return `rgb(${mixedColor.r}, ${mixedColor.g}, ${mixedColor.b})`;
+}
+
+// Display the correct color
+const mixedCorrectColor = document.getElementById("mixedCorrectColor");
+mixedCorrectColor.style.backgroundColor = mixColors(colorsArray);
