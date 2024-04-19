@@ -58,7 +58,7 @@ function genRandomColorsArray(arrayLength) {
 // Generate an array of 6 random colors
 const colorsArray = genRandomColorsArray(6);
 
-// Add the colors to the DOM
+// Add the colors to the DOM function
 function addColorsToDom(colorsArray) {
   document
     .querySelectorAll("#generatedColors .colors-block")
@@ -66,9 +66,6 @@ function addColorsToDom(colorsArray) {
       color.style.backgroundColor = colorsArray[index];
     });
 }
-
-// Display the colors
-addColorsToDom(colorsArray);
 
 /**
  * ******************************************************************************************
@@ -107,21 +104,110 @@ function mixColors(colorsArray) {
   return `rgb(${mixedColor.r}, ${mixedColor.g}, ${mixedColor.b})`;
 }
 
+// Function to shuffle and re-render colors
+function shuffleAndRenderColors(colorsArray) {
+  // Sort again the colors array
+  colorsArray.sort(() => Math.random() - 0.5);
+
+  // Display them again to the generated colors
+  addColorsToDom(colorsArray);
+}
+
 // Display the correct color
 const mixedCorrectColor = document.getElementById("mixedCorrectColor");
 mixedCorrectColor.style.backgroundColor = mixColors(colorsArray);
+shuffleAndRenderColors(colorsArray);
 
 /**
  * ******************************************************************************************
- * Shuffle the colors when the start button is clicked
+ * Choose the 3 colors
  * ******************************************************************************************
  */
 
-const startButton = document.getElementById("startButton");
+// Select the color containers
+const generatedColors = document.getElementById("generatedColors");
+const inputColors = document.getElementById("inputColors");
 
-startButton.addEventListener("click", () => {
-  colorsArray.sort(() => Math.random() - 0.5);
+// Get the color blocks
+const generatedColorBlocks = Array.from(generatedColors.children);
+const inputColorBlocks = Array.from(inputColors.children);
 
-  // Display the colors
-  addColorsToDom(colorsArray);
+// Array to store the selected colors
+const selectedColors = [];
+
+// Function to handle color block click
+function handleColorBlockClick(event) {
+  const selectedColorBlock = event.target;
+
+  // Check if the clicked color block is in the input colors
+  if (inputColorBlocks.includes(selectedColorBlock)) {
+    // Find the clicked color block in the selected colors
+    const index = selectedColors.indexOf(
+      selectedColorBlock.style.backgroundColor
+    );
+
+    // Move the clicked color block back to the generated colors and remove the color from the array
+    if (index !== -1) {
+      const emptyGeneratedBlock = generatedColorBlocks.find(
+        (block) => !block.style.backgroundColor
+      );
+      if (emptyGeneratedBlock) {
+        emptyGeneratedBlock.style.backgroundColor = selectedColors[index];
+        selectedColorBlock.style.backgroundColor = "";
+        selectedColors.splice(index, 1);
+      }
+    }
+  } else if (selectedColors.length <= 3) {
+    // Find the clicked color block in the generated colors
+    const index = generatedColorBlocks.indexOf(selectedColorBlock);
+
+    // Move the clicked color block to the input colors and add the color to the array
+    if (index !== -1) {
+      const color = generatedColorBlocks[index].style.backgroundColor;
+      const emptyInputBlock = inputColorBlocks.find(
+        (block) => !block.style.backgroundColor
+      );
+      if (emptyInputBlock) {
+        emptyInputBlock.style.backgroundColor = color;
+        generatedColorBlocks[index].style.backgroundColor = "";
+        selectedColors.push(color);
+      }
+    }
+  }
+}
+
+// Attach the click event listener to each color block in the generated colors and input colors
+generatedColorBlocks.forEach((block) =>
+  block.addEventListener("click", handleColorBlockClick)
+);
+inputColorBlocks.forEach((block) =>
+  block.addEventListener("click", handleColorBlockClick)
+);
+
+/**
+ * ******************************************************************************************
+ * Check the answer (mix the 3 colors and add to the mixedColor id), and display the result
+ * ******************************************************************************************
+ */
+
+// Select the check button
+const checkButton = document.getElementById("mixColors");
+const mixedColorBlock = document.querySelector("#mixedColor .colors-block");
+
+checkButton.addEventListener("click", () => {
+  // Check if the selected colors are 3
+  if (selectedColors.length !== 3) {
+    alert("Please select 3 colors!");
+    return;
+  }
+
+  const mixedColor = mixColors(selectedColors);
+  const correctColor = mixedCorrectColor.style.backgroundColor;
+
+  mixedColorBlock.style.backgroundColor = mixedColor;
+  // if (mixedColor === correctColor) {
+  //   alert("Correct!");
+  // } else {
+  //   alert("Try again!");
+  // }
 });
