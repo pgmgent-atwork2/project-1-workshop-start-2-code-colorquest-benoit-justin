@@ -1,0 +1,60 @@
+/*
+===================================
+Main
+===================================
+*/
+
+main p {
+    padding-bottom: 2rem;
+}
+
+main img {
+    border: 2px solid var(--gold);
+    max-width: 100%;
+    width: 68rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+
+section {
+    padding-bottom: 2.5rem;
+    border-bottom: 2px solid var(--light);
+    margin-bottom: 2.5rem;
+}
+
+.title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.logo-artevelde {
+    width: 14rem;
+    border: none;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+.highlight {
+    font-size: 1.1rem;
+    background-color: hsl(206, 28%, 16%);
+    padding: 4px 7px;
+}
+
+.sidenote {
+    font-size: 1rem;
+    opacity: 0.4;
+    text-decoration: none;
+}
+
+.sidenote:hover {
+    opacity: 0.8;
+    color: var(--light);
+}
+
+li {
+    padding-bottom: 0.2rem;
+}

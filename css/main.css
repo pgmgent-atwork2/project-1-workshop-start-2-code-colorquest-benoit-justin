@@ -32,9 +32,19 @@ body {
   font-family: 'Lora', serif;
   background-color: var(--dark);
   color: var(--light);
-  max-width: 90rem;
+  padding: 0 8.75rem;
+  max-width: 107.5rem;
   margin: 0 auto;
   font-size: 1.25rem;
+}
+
+body *::selection {
+  background-color: hsla(46, 86%, 58%, 0.8);
+  color: var(--dark);
+}
+
+h1 {
+  padding-bottom: 1rem;
 }
 
 h2 {
@@ -324,6 +334,7 @@ Bottom section
   padding: 1rem 5rem;
   border: solid 2px var(--light);
   text-decoration: none;
+  text-align: center;
 }
 
 .actions .button:hover {

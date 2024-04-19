@@ -23,9 +23,63 @@
         <p class="header__right">Made by <a href="https://github.com/pgm-justdesc4" target="_blank">Justin</a> & <a href="https://github.com/pgm-benobira" target="_blank">Benoît</a></p>
     </header>
     <main>
-        <section class="intro">
-            <h1>Workshop - Start To Code</h1>
-            <img src="../img/ARTEVELDE_hs_logo WIT.png" alt="Logo-Artevelde">
+        <section class="introduction">
+            <div class="title">
+                <div>
+                    <h1>Workshop - Start To Code</h1>
+                    <p>We gaan de minigame <span class="gold">ColorQuest</span> bouwen! Het doel van het spel is om uit 6 verschillende kleuren de juiste combinatie met 3 kleuren te vormen en de gewenste toverdrank kleur te bekomen.</p>
+                </div>
+                <img class="logo-artevelde" src="../img/ARTEVELDE_hs_logo WIT.png" alt="Logo-Artevelde">
+            </div>
+            <img src="../img/screenshots/Screen_1.png" alt="screen-1">
+            <p>De game is opgebouwd met drie codeertalen:</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+        <section class="visual-code">
+            <h1><span class="gold">Deel 1:</span> Code Editor en mappenstructuur</h1>
+            <p>Voor dat we starten, hebben we een code-editor nodig, hier gebruiken we <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>. Ook zullen we een paar afbeeldingen nodig hebben om dezelfde look en feel te krijgen als ColorQuest.</p>
+            <p>Afbeeldingen:
+                <a href="/img/svg/Plus.svg" download>Plus.svg</a>,
+                <a href="/img/svg/Equal.svg" download>Equal.svg</a>,
+                <a href="/img/svg/Flask.svg" download>Flask.svg</a>,
+                (<a href="/img/svg/Icon akar-crown.svg" download>Crown.svg</a>,
+                <a href="/img/svg/Icon akar-question.svg" download>Questionmark.svg</a>). 
+                <a href="https://www.adobe.com/creativecloud/file-types/image/comparison/png-vs-svg.html" target="_blank" class="sidenote">Waarom zijn het svg's?</a>
+            </p>
+            <ul>
+                <li><span class="gold">1.1</span> Maak een nieuwe map aan op je computer en noem deze <code class="highlight">ColorQuest</code>.</li>
+                <li><span class="gold">1.2</span> Open Visual Studio Code en sleep de map <code class="highlight">ColorQuest</code> in de editor.</li>
+                <li><span class="gold">1.3</span> Maak een bestand en drie mappen aan in de map <code class="highlight">ColorQuest</code> en noem deze <code class="highlight">index.html</code>, <code class="highlight">css</code>, <code class="highlight">img</code> en <code class="highlight">js</code>.</li>
+                <li><span class="gold">1.4</span> Vull de bestanden aan tot onderstaande resultaat.</li>
+                <li><span class="gold">1.5</span> Installeer de extensie <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a> in Visual Studio Code.</li>
+                <li><span class="gold">1.6</span> Klik met de rechtermuisknop op het bestand <code class="highlight">index.html</code> en selecteer "Open with Live Server".</li>
+                <li><span class="gold">Een stap dichter bij jouw toverdrank!</span></li>
+            </ul>
+        </section>
+        <section class="html-css">
+            <h1><span class="gold">Deel 2:</span> HTML & CSS: de strcutuur en stijl</h1>
+            <p>De basis van de game is de HTML en CSS. Hierin zullen we de structuur van de game opbouwen en de stijl toevoegen.</p>
+            <ul>
+                <li><span class="gold">2.1</span> Kopieer de onderstaande code in het bestand <code class="highlight">index.html</code>.</li>
+                <li><span class="gold">2.2</span> Kopieer de onderstaande code in het bestand <code class="highlight">main.css</code>.</li>
+                <li><span class="gold">2.3</span> Ververs de pagina in de browser en bekijk het resultaat. (de url is hoogstwaarschijnlijk: <a href="http://127.0.0.1:5500/" target="_blank">http://127.0.0.1:5500/</a>). Als alles goed is, ziet het er nu zo uit. Een volledig donker gekleurd vlak.</li>
+                <li>
+                    Probeer het uit: Laten we het eens van kleur veranderen. Hiervoor moeten we de kleurwaarde veranderen. Zoek naar <code class="highlight">--dark: hsl(206, 19%, 22%);</code> en verander dit lijntje code naar bijvoorbeeld <code class="highlight">--dark: indigo;</code>. De achtergrond is nu paarsachtig.
+                    <a href="https://www.w3schools.com/colors/colors_hsl.asp" target="_blank" class="sidenote">Wat is hsl?</a>
+                </li>
+                <li><span class="gold">2.4</span> We gaan de webpagina nu indelen in twee helften met daarin nog twee subhelften waar de inhoud kan komen. Voeg onderstaande elementen toe, en plaats ze tussen de openings <code class="highlight">&lt;body></code>-tag en sluitings <code class="highlight">&lt;/body></code>-tag </li>
+                <li><span class="gold">2.5</span> Voeg de onderstaande code toe tussen de juiste <code class="highlight">&lt;section></code>-tag en sluitings <code class="highlight">&lt;/section></code>-tag. "Maar ik zie geen kleurtjes?" Het zijn grotendeels elementen die leeg zijn en worden later gevuld met kleurtjes aan de hand van Javascript in deel 3.</li>
+                <li>Probeer het uit: Wat als we 1, 2 of zelfs 3 <code class="highlight">&lt;div class="colors-block">&lt;/div></code> binnen <code class="highlight">&lt;section class="bottom-section__left"></code> verwijderen? Wat gebeurt er dan? De bolletjes beneden links verdwijnen bij het refreshen van de pagina. Laten we ze terug zetten tot we er weer 5 hebben.</li>
+                <li><span class="gold">Tijd om wat kleur toe te voegen, nee?</span></li>
+            </ul>
+        </section>
+        <section class="javascript">
+            <h1><span class="gold">Deel 3:</span> Interactiviteit met JavaScript</h1>
+            <p>De laatste stap is het toevoegen van de JavaScript. Hierin zullen we de functionaliteit van de game toevoegen.</p>
         </section>
     </main>
 </body>
