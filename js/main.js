@@ -55,8 +55,8 @@ function genRandomColorsArray(arrayLength) {
  * ******************************************************************************************
  */
 
-// Generate an array of 6 random colors
-const colorsArray = genRandomColorsArray(6);
+// Generate an array of 5 random colors
+let colorsArray = genRandomColorsArray(5);
 
 // Add the colors to the DOM function
 function addColorsToDom(colorsArray) {
@@ -104,33 +104,55 @@ function mixColors(colorsArray) {
   return `rgb(${mixedColor.r}, ${mixedColor.g}, ${mixedColor.b})`;
 }
 
-// Function to shuffle and re-render colors
-function shuffleAndRenderColors(colorsArray) {
-  // Sort again the colors array
-  colorsArray.sort(() => Math.random() - 0.5);
+// Display the correct color
+let mixedCorrectColor = document.getElementById("mixedCorrectColor");
+mixedCorrectColor.style.backgroundColor = mixColors(colorsArray);
+
+/**
+ * ******************************************************************************************
+ * Shuffle and re-render the 5 generated colors
+ * ******************************************************************************************
+ */
+
+// Select the generated colors block
+const generatedColors = document.getElementById("generatedColors");
+
+// Get the color blocks
+let generatedColorBlocks = Array.from(generatedColors.children);
+const inputColorBlocks = Array.from(
+  document.getElementById("inputColors").children
+);
+
+function shuffleAndRenderColors() {
+  // Create a copy of the colors array
+  let shuffledColorsArray = [...colorsArray];
+
+  // Shuffle the copied array
+  for (let i = shuffledColorsArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledColorsArray[i], shuffledColorsArray[j]] = [
+      shuffledColorsArray[j],
+      shuffledColorsArray[i],
+    ];
+  }
 
   // Display them again to the generated colors
-  addColorsToDom(colorsArray);
+  addColorsToDom(shuffledColorsArray);
+
+  // Update the generatedColorBlocks array
+  generatedColorBlocks = Array.from(generatedColors.children);
+
+  return shuffledColorsArray;
 }
 
-// Display the correct color
-const mixedCorrectColor = document.getElementById("mixedCorrectColor");
-mixedCorrectColor.style.backgroundColor = mixColors(colorsArray);
-shuffleAndRenderColors(colorsArray);
+// Shuffle the colors array and display them
+colorsArray = shuffleAndRenderColors();
 
 /**
  * ******************************************************************************************
  * Choose the 3 colors
  * ******************************************************************************************
  */
-
-// Select the color containers
-const generatedColors = document.getElementById("generatedColors");
-const inputColors = document.getElementById("inputColors");
-
-// Get the color blocks
-const generatedColorBlocks = Array.from(generatedColors.children);
-const inputColorBlocks = Array.from(inputColors.children);
 
 // Array to store the selected colors
 const selectedColors = [];
@@ -210,7 +232,12 @@ checkButton.addEventListener("click", () => {
     score.innerHTML = parseInt(score.innerHTML) + 1;
     // Start the game again
     selectedColors.length = 0;
-    shuffleAndRenderColors(colorsArray);
+    colorsArray = genRandomColorsArray(5);
+    // Display the correct color
+    mixedCorrectColor.style.backgroundColor = mixColors(colorsArray);
+    // Shuffle the colors array and display them
+    colorsArray = shuffleAndRenderColors();
+
     mixedColorBlock.style.backgroundColor = "";
 
     // Reset the input colors
@@ -218,8 +245,5 @@ checkButton.addEventListener("click", () => {
 
     // Reset the mixed color
     mixedColorBlock.style.backgroundColor = "";
-
-    // Display the correct color
-    mixedCorrectColor.style.backgroundColor = mixColors(colorsArray);
   }
 });
