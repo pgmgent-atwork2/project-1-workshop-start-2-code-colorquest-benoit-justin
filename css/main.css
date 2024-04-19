@@ -1,3 +1,113 @@
+:root {
+  --light: hsl(36, 14%, 93%);
+  --dark: hsl(206, 19%, 22%);
+  --gold: hsl(46, 86%, 58%);
+}
+
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('../fonts/CinzelDecorative-Bold.woff2') format('woff2'),
+      url('../fonts/CinzelDecorative-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Regular.woff2') format('woff2'),
+      url('../fonts/Lora-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+===================================
+Global styles
+===================================
+*/
+
+body {
+  font-family: 'Lora', serif;
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 0 8.75rem;
+  font-size: 1.25rem;
+}
+
+button {
+  border: none;
+  background: none;
+  color: var(--light);
+  cursor: pointer;
+}
+
+a {
+  color: var(--light);
+}
+
+a:hover {
+  color: var(--gold);
+  transition: 0.3s;
+}
+
+button {
+  text-decoration: underline;
+}
+
+button:hover {
+  color: var(--gold);
+  transition: 0.3s;
+}
+
+/*
+===================================
+Header
+===================================
+*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3.75rem 0;
+  border-bottom: solid 1px var(--light);
+  margin-bottom: 3.75rem;
+}
+
+.header__left,
+.header__center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__left::before,
+.header__center::before {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('../img/svg/Icon\ akar-question.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+}
+
+.header__center {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.375rem;
+  text-decoration: none;
+}
+
+.header__center::before {
+  width: 2.2rem;
+  height: 2.2rem;
+  background-image: url('../img/svg/Icon\ akar-crown.svg');
+}
+
 /*
 ===================================
 Generated colors
