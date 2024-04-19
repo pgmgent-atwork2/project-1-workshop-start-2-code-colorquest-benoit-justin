@@ -186,7 +186,7 @@ inputColorBlocks.forEach((block) =>
 
 /**
  * ******************************************************************************************
- * Check the answer (mix the 3 colors and add to the mixedColor id), and display the result
+ * Check if the colors are correct
  * ******************************************************************************************
  */
 
@@ -203,11 +203,23 @@ checkButton.addEventListener("click", () => {
 
   const mixedColor = mixColors(selectedColors);
   const correctColor = mixedCorrectColor.style.backgroundColor;
+  const score = document.getElementById("score");
 
   mixedColorBlock.style.backgroundColor = mixedColor;
-  // if (mixedColor === correctColor) {
-  //   alert("Correct!");
-  // } else {
-  //   alert("Try again!");
-  // }
+  if (mixedColor === correctColor) {
+    score.innerHTML = parseInt(score.innerHTML) + 1;
+    // Start the game again
+    selectedColors.length = 0;
+    shuffleAndRenderColors(colorsArray);
+    mixedColorBlock.style.backgroundColor = "";
+
+    // Reset the input colors
+    inputColorBlocks.forEach((block) => (block.style.backgroundColor = ""));
+
+    // Reset the mixed color
+    mixedColorBlock.style.backgroundColor = "";
+
+    // Display the correct color
+    mixedCorrectColor.style.backgroundColor = mixColors(colorsArray);
+  }
 });

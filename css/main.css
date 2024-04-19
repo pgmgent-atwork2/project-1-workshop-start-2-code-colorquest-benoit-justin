@@ -110,9 +110,14 @@ header {
 
 /*
 ===================================
-Generated colors
+Main
 ===================================
 */
+
+.instructions {
+  text-align: center;
+  margin-bottom: 3.75rem;
+}
 
 .colors {
   display: flex;
@@ -124,3 +129,18 @@ Generated colors
   height: 2rem;
   border: solid 1px #000;
 }
+
+/* 
+Top section
+*/
+
+.top-section {
+  padding-bottom: 4rem;
+  border-bottom: solid 1px var(--light);
+  margin-bottom: 4rem;
+}
+
+/*
+Bottom section
+*/
+

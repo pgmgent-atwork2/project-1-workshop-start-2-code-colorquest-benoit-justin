@@ -20,39 +20,45 @@
       <p class="header__right">Made by <a href="https://github.com/pgm-justdesc4" target="_blank">Justin</a> & <a href="https://github.com/pgm-benobira" target="_blank">Benoît</a></p>
     </header>
     <main>
-      <!-- 3 Colors input -->
-      <h1>Choose 3 colors:</h1>
-      <div id="inputColors" class="colors" >
-        <div class="colors-block"></div>
-        <div class="colors-block"></div>
-        <div class="colors-block"></div>
-      </div>
+      <p class="instructions">Get the correct potion color before you embark on your next adventure</p>
 
-      <button id="mixColors">
-        Mix colors
-      </button>
+      <section class="top-section">
+        <!-- 3 Colors input -->
+        <div id="inputColors" class="colors" >
+          <div class="colors-block"></div>
+          <div class="colors-block"></div>
+          <div class="colors-block"></div>
+        </div>
+        <!-- Mixed input -->
+        <div id="mixedColor">
+          <div class="colors-block"></div>
+        </div>
+        <!-- Generated mixed color, from the 3 last colors -->
+        <h1>Search this color:</h1>
+        <div id="mixedCorrectColor" class="colors-block"></div>
+      </section>
 
-      <!-- Mixed input -->
-      <div id="mixedColor">
-        <div class="colors-block"></div>
-      </div>
-
-      <!-- Generated mixed color, from the 3 last colors -->
-      <h1>Search this color:</h1>
-      <div id="mixedCorrectColor" class="colors-block"></div>
-
-      <!-- 6 random colors -->
-      <h1>6 Generated colors</h1>
-      <div id="generatedColors" class="colors">
-        <div class="colors-block"></div>
-        <div class="colors-block"></div>
-        <div class="colors-block"></div>
-        <div class="colors-block"></div>
-        <div class="colors-block"></div>
-        <div class="colors-block"></div>
-      </div>
-
-      <button id="startButton">Start</button>
+      <section class="bottom-section">
+        <!-- Mix colors button -->
+        <button id="mixColors">
+          Mix colors
+        </button>
+        <!-- 6 random colors -->
+        <h1>6 Generated colors</h1>
+        <div id="generatedColors" class="colors">
+          <div class="colors-block"></div>
+          <div class="colors-block"></div>
+          <div class="colors-block"></div>
+          <div class="colors-block"></div>
+          <div class="colors-block"></div>
+          <div class="colors-block"></div>
+        </div>
+        <!-- Score -->
+        <div>
+          <h1>Score</h1>
+          <p id="score">0</p>
+        </div>
+      </section>
     </main>
     <script src="/js/main.js"></script>
   </body>
