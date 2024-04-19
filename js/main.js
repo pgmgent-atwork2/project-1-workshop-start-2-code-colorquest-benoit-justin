@@ -15,7 +15,7 @@ function getRandomNumber(number) {
  */
 
 function genRandomRgbColor() {
-  const maxColorValue = 256;
+  const maxColorValue = 256; // 255, but as we are using Math.floor, we need to add 1
   return `rgb(${getRandomNumber(maxColorValue)}, ${getRandomNumber(
     maxColorValue
   )}, ${getRandomNumber(maxColorValue)})`;
@@ -55,8 +55,10 @@ function genRandomColorsArray(arrayLength) {
  * ******************************************************************************************
  */
 
+// Generate an array of 6 random colors
 const colorsArray = genRandomColorsArray(6);
 
+// Add the colors to the DOM
 function addColorsToDom(colorsArray) {
   document
     .querySelectorAll("#generatedColors .colors-block")
@@ -65,6 +67,7 @@ function addColorsToDom(colorsArray) {
     });
 }
 
+// Display the colors
 addColorsToDom(colorsArray);
 
 /**
@@ -74,27 +77,29 @@ addColorsToDom(colorsArray);
  */
 
 function mixColors(colorsArray) {
+  // Create an object to store the mixed color
   const mixedColor = {
     r: 0,
     g: 0,
     b: 0,
   };
 
+  // Loop over the first 3 colors in the array
   colorsArray.slice(0, 3).forEach((color) => {
+    // Get the RGB values of the color
     const colorValues = color
       .replace("rgb(", "")
       .replace(")", "")
       .split(", ")
       .map((value) => parseInt(value));
 
+    // Add the RGB values to the mixed color object
     mixedColor.r += colorValues[0];
     mixedColor.g += colorValues[1];
     mixedColor.b += colorValues[2];
   });
 
-  console.log(colorsArray);
-  console.log(mixedColor);
-
+  // Divide the RGB values by 3
   mixedColor.r = Math.floor(mixedColor.r / 3);
   mixedColor.g = Math.floor(mixedColor.g / 3);
   mixedColor.b = Math.floor(mixedColor.b / 3);
@@ -105,3 +110,18 @@ function mixColors(colorsArray) {
 // Display the correct color
 const mixedCorrectColor = document.getElementById("mixedCorrectColor");
 mixedCorrectColor.style.backgroundColor = mixColors(colorsArray);
+
+/**
+ * ******************************************************************************************
+ * Shuffle the colors when the start button is clicked
+ * ******************************************************************************************
+ */
+
+const startButton = document.getElementById("startButton");
+
+startButton.addEventListener("click", () => {
+  colorsArray.sort(() => Math.random() - 0.5);
+
+  // Display the colors
+  addColorsToDom(colorsArray);
+});

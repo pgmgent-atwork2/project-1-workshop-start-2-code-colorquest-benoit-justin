@@ -5,34 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/app/css/reset.css">
-    <link rel="stylesheet" href="/app/css/main.css">
-
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/main.css" />
 
     <title>ColorQuest</title>
-
-
   </head>
   <body>
+    <header></header>
+    <main>
+      <!-- 3 Colors input -->
+      <h1>Choose 3 colors:</h1>
+      <div id="inputColors" class="colors" >
+        <div class="colors-block"></div>
+        <div class="colors-block"></div>
+        <div class="colors-block"></div>
+      </div>
 
-    <!-- 3 Colors input + mixed -->
+      <button id="mixColors">
+        Mix colors
+      </button>
 
-    <!-- Generated mixed color, from the 3 last colors -->
-    <h1>Search this color:</h1>
-    <div id="mixedCorrectColor" class="colors-block"></div>
+      <!-- Mixed input -->
+      <div id="mixedColor">
+        <div class="colors-block"></div>
+      </div>
 
-    <!-- 6 random colors -->
-    <h1>6 Generated colors</h1>
-  <div id="generatedColors" class="generated-colors">
-    <div class="colors-block"></div>
-    <div class="colors-block"></div>
-    <div class="colors-block"></div>
-    <div class="colors-block"></div>
-    <div class="colors-block"></div>
-    <div class="colors-block"></div>
-  </div>
+      <!-- Generated mixed color, from the 3 last colors -->
+      <h1>Search this color:</h1>
+      <div id="mixedCorrectColor" class="colors-block"></div>
 
+      <!-- 6 random colors -->
+      <h1>6 Generated colors</h1>
+      <div id="generatedColors" class="colors">
+        <div class="colors-block"></div>
+        <div class="colors-block"></div>
+        <div class="colors-block"></div>
+        <div class="colors-block"></div>
+        <div class="colors-block"></div>
+        <div class="colors-block"></div>
+      </div>
 
-    <script src="/app/js/main.js"></script>
+      <button id="startButton">Start</button>
+    </main>
+    <script src="/js/main.js"></script>
   </body>
 </html>

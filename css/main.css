@@ -4,7 +4,7 @@ Generated colors
 ===================================
 */
 
-.generated-colors {
+.colors {
   display: flex;
   gap: 1rem;
 }
@@ -12,4 +12,5 @@ Generated colors
 .colors-block {
   width: 2rem;
   height: 2rem;
+  border: solid 1px #000;
 }
