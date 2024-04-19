@@ -13,7 +13,20 @@ main img {
     max-width: 100%;
     width: 68rem;
     margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.small-image {
+    width: 100%;
+    max-width: 46rem;
+    margin: 2rem 0;
     margin-bottom: 4rem;
+    border-color: var(--light);
+}
+
+.embeded-code {
+    margin: 2rem 0;
+    border: 2px solid var(--light);
 }
 
 section {
@@ -32,6 +45,7 @@ section {
 .logo-artevelde {
     width: 14rem;
     border: none;
+    box-shadow: none;
 }
 
 .gold {

@@ -52,11 +52,20 @@
             </p>
             <ul>
                 <li><span class="gold">1.1</span> Maak een nieuwe map aan op je computer en noem deze <code class="highlight">ColorQuest</code>.</li>
+                <img class="small-image" src="../img/screenshots/Screen_2.png" alt="screen-2">
                 <li><span class="gold">1.2</span> Open Visual Studio Code en sleep de map <code class="highlight">ColorQuest</code> in de editor.</li>
+                <img class="small-image" src="../img/screenshots/Screen_3.png" alt="screen-3">
                 <li><span class="gold">1.3</span> Maak een bestand en drie mappen aan in de map <code class="highlight">ColorQuest</code> en noem deze <code class="highlight">index.html</code>, <code class="highlight">css</code>, <code class="highlight">img</code> en <code class="highlight">js</code>.</li>
-                <li><span class="gold">1.4</span> Vull de bestanden aan tot onderstaande resultaat.</li>
+                <img class="small-image" src="../img/screenshots/Screen_4.png" alt="screen-4">
+                <li>
+                    <span class="gold">1.4</span> Vul de bestanden aan tot onderstaande resultaat. Voeg deze <code class="highlight"><a href="/css/reset.css" download>reset.css</a></code> toe in de <code class="highlight">css</code>-map.
+                    <a href="https://cssdeck.com/blog/what-is-a-css-reset/" target="_blank" class="sidenote">Wat is die reset.css?</a>
+                </li>
+                <img class="small-image" src="../img/screenshots/Screen_5.png" alt="screen-5">
                 <li><span class="gold">1.5</span> Installeer de extensie <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a> in Visual Studio Code.</li>
+                <img class="small-image" src="../img/screenshots/Screen_6.png" alt="screen-6">
                 <li><span class="gold">1.6</span> Klik met de rechtermuisknop op het bestand <code class="highlight">index.html</code> en selecteer "Open with Live Server".</li>
+                <img class="small-image" src="../img/screenshots/Screen_7.png" alt="screen-7">
                 <li><span class="gold">Een stap dichter bij jouw toverdrank!</span></li>
             </ul>
         </section>
@@ -65,16 +74,23 @@
             <p>De basis van de game is de HTML en CSS. Hierin zullen we de structuur van de game opbouwen en de stijl toevoegen.</p>
             <ul>
                 <li><span class="gold">2.1</span> Kopieer de onderstaande code in het bestand <code class="highlight">index.html</code>.</li>
-                <li><span class="gold">2.2</span> Kopieer de onderstaande code in het bestand <code class="highlight">main.css</code>.</li>
-                <li><span class="gold">2.3</span> Ververs de pagina in de browser en bekijk het resultaat. (de url is hoogstwaarschijnlijk: <a href="http://127.0.0.1:5500/" target="_blank">http://127.0.0.1:5500/</a>). Als alles goed is, ziet het er nu zo uit. Een volledig donker gekleurd vlak.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/poxrhnL8/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">2.2</span> Kopieer de onderstaande code in het bestand <code class="highlight">main.css</code>. Dit bevat alvast een aantal basisstijlen die we later zullen nodig hebben voor de look & feel van onze app. Zowel globaal als per sectie.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/khjLvqaf/embedded/css/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">2.3</span> Ververs de pagina in de browser en bekijk het resultaat. (de url is hoogstwaarschijnlijk: <a href="http://127.0.0.1:5500/" target="_blank">http://127.0.0.1:5500/</a>). Als alles goed is, ziet het er nu zo uit. Een volledig donker gekleurd vlak zoals de achtergrond van deze website.</li>
+                <iframe class="embeded-code" width="100%" height="300" src="//jsfiddle.net/cqgz1okb/1/embedded/result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                 <li>
                     Probeer het uit: Laten we het eens van kleur veranderen. Hiervoor moeten we de kleurwaarde veranderen. Zoek naar <code class="highlight">--dark: hsl(206, 19%, 22%);</code> en verander dit lijntje code naar bijvoorbeeld <code class="highlight">--dark: indigo;</code>. De achtergrond is nu paarsachtig.
                     <a href="https://www.w3schools.com/colors/colors_hsl.asp" target="_blank" class="sidenote">Wat is hsl?</a>
                 </li>
-                <li><span class="gold">2.4</span> We gaan de webpagina nu indelen in twee helften met daarin nog twee subhelften waar de inhoud kan komen. Voeg onderstaande elementen toe, en plaats ze tussen de openings <code class="highlight">&lt;body></code>-tag en sluitings <code class="highlight">&lt;/body></code>-tag </li>
+                <iframe class="embeded-code" width="100%" height="300" src="//jsfiddle.net/cqgz1okb/2/embedded/result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">2.4</span> We gaan de webpagina nu indelen in twee helften met daarin nog twee subhelften waar de inhoud kan komen. Voeg onderstaande elementen toe, en plaats ze tussen de openings <code class="highlight">&lt;main></code>-tag en sluitings <code class="highlight">&lt;/main></code>-tag </li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/qkduev2m/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                 <li><span class="gold">2.5</span> Voeg de onderstaande code toe tussen de juiste <code class="highlight">&lt;section></code>-tag en sluitings <code class="highlight">&lt;/section></code>-tag. "Maar ik zie geen kleurtjes?" Het zijn grotendeels elementen die leeg zijn en worden later gevuld met kleurtjes aan de hand van Javascript in deel 3.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/cqgz1okb/8/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                 <li>Probeer het uit: Wat als we 1, 2 of zelfs 3 <code class="highlight">&lt;div class="colors-block">&lt;/div></code> binnen <code class="highlight">&lt;section class="bottom-section__left"></code> verwijderen? Wat gebeurt er dan? De bolletjes beneden links verdwijnen bij het refreshen van de pagina. Laten we ze terug zetten tot we er weer 5 hebben.</li>
-                <li><span class="gold">Tijd om wat kleur toe te voegen, nee?</span></li>
+                <img class="small-image" src="../img/screenshots/Screen_8.png" alt="screen-8">
+                <li><span class="gold">Tijd om wat kleurtjes toe te voegen, nee?</span></li>
             </ul>
         </section>
         <section class="javascript">
