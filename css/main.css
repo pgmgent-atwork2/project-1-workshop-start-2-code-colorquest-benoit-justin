@@ -36,6 +36,11 @@ body {
   font-size: 1.25rem;
 }
 
+h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.25rem;
+}
+
 button {
   border: none;
   background: none;
@@ -72,9 +77,9 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 3.75rem 0;
-  border-bottom: solid 1px var(--light);
-  margin-bottom: 3.75rem;
+  padding: 2.5rem 0;
+  border-bottom: solid 2px var(--light);
+  margin-bottom: 2.5rem;
 }
 
 .header__left,
@@ -116,31 +121,190 @@ Main
 
 .instructions {
   text-align: center;
-  margin-bottom: 3.75rem;
-}
-
-.colors {
-  display: flex;
-  gap: 1rem;
-}
-
-.colors-block {
-  width: 2rem;
-  height: 2rem;
-  border: solid 1px #000;
-}
-
-/* 
-Top section
-*/
-
-.top-section {
-  padding-bottom: 4rem;
-  border-bottom: solid 1px var(--light);
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 /*
-Bottom section
+-----------------------------------
+Colors
+-----------------------------------
 */
 
+.colors-block {
+  width: 4rem;
+  height: 4rem;
+  border: solid 2px var(--light);
+  border-radius: 50%;
+}
+
+.colors-block:hover {
+  cursor: pointer;
+}
+
+/* 
+-----------------------------------
+Top section
+-----------------------------------
+*/
+
+.top-section {
+  padding: 0 2.7rem;
+  padding-bottom: 2.5rem;
+  border-bottom: solid 2px var(--light);
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+
+.flask {
+  width: 8.4rem;
+  height: 8.4rem;
+  position: relative;
+  border: none;
+}
+
+.flask::before {
+  content: '';
+  display: block;
+  width: 10.9rem;
+  height: 11.8rem;
+  background-image: url('../img/svg/Flask.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -2.8rem;
+  left: -0.6rem;
+}
+
+.flask--bigger {
+  width: 10.8rem;
+  height: 10.8rem;
+}
+
+.flask--bigger::before {
+  width: 13.8rem;
+  height: 15.4rem;
+  top: -3.5rem;
+  left: -0.68rem;
+}
+
+.flask--bigger:hover {
+  cursor: auto;
+}
+
+/* -- Top section (left) -- */
+
+.top-section__left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8rem;
+}
+
+.top-section__left .flask::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../img/svg/Plus.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 2.8rem;
+  right: -5rem;
+}
+
+.top-section__left .flask--equal::after {
+  background-image: url('../img/svg/Equal.svg');
+}
+
+/* -- Top section (right) -- */
+
+.top-section__right {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.line {
+  width: 2px;
+  height: 22rem;
+  background-color: var(--light);
+}
+
+/*
+-----------------------------------
+Bottom section
+-----------------------------------
+*/
+
+.bottom-section {
+  padding: 0 2.7rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+
+/* -- Bottom section (left) -- */
+
+.bottom-section__left p {
+  margin-bottom: 2.5rem;
+}
+
+.random-colors {
+  display: flex;
+  gap: 2.5rem;
+}
+
+/* -- Bottom section (right) -- */
+
+.bottom-section__right {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.actions .button {
+  font-family: 'Cinzel Decorative', serif;
+  padding: 1rem 2rem;
+  border: solid 2px var(--light);
+  text-decoration: none;
+}
+
+.actions .button:hover {
+  border-color: var(--gold);
+  transition: 0.3s;
+}
+
+.button--cta {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.button--cta:hover {
+  background-color: var(--gold);
+  color: var(--dark);
+}
+
+.line--short {
+  width: 2px;
+  height: 12rem;
+}
+
+.score {
+  font-size: 5rem;
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+}
