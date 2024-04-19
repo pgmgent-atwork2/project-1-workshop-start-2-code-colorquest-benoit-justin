@@ -32,7 +32,8 @@ body {
   font-family: 'Lora', serif;
   background-color: var(--dark);
   color: var(--light);
-  padding: 0 8.75rem;
+  max-width: 90rem;
+  margin: 0 auto;
   font-size: 1.25rem;
 }
 
@@ -66,6 +67,32 @@ button:hover {
   transition: 0.3s;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: var(--light);
+  color: var(--dark);
+  text-align: center;
+  padding: 5px 1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 160%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 /*
 ===================================
 Header
@@ -80,6 +107,11 @@ header {
   padding: 2.5rem 0;
   border-bottom: solid 2px var(--light);
   margin-bottom: 2.5rem;
+}
+
+.header__left {
+  max-width: 16.25rem;
+  width: 100%;
 }
 
 .header__left,
@@ -107,10 +139,20 @@ header {
   text-decoration: none;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
 .header__center::before {
   width: 2.2rem;
   height: 2.2rem;
   background-image: url('../img/svg/Icon\ akar-crown.svg');
+  animation: spin 0.9s ease-in-out;
 }
 
 /*
@@ -152,6 +194,7 @@ Top section
   padding-bottom: 2.5rem;
   border-bottom: solid 2px var(--light);
   margin-bottom: 2.5rem;
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -278,7 +321,7 @@ Bottom section
 
 .actions .button {
   font-family: 'Cinzel Decorative', serif;
-  padding: 1rem 2rem;
+  padding: 1rem 5rem;
   border: solid 2px var(--light);
   text-decoration: none;
 }

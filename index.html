@@ -15,7 +15,7 @@
   </head>
   <body>
     <header>
-      <button class="header__left">How to play?</button>
+      <a href="/instructions" class="header__left">Build the game yourself</a>
       <a href="/" class="header__center">ColorQuest</a>
       <p class="header__right">Made by <a href="https://github.com/pgm-justdesc4" target="_blank">Justin</a> & <a href="https://github.com/pgm-benobira" target="_blank">Benoît</a></p>
     </header>
@@ -25,9 +25,9 @@
       <section class="top-section">
         <section class="top-section__left input-flasks" id="inputColors">
           <!-- 3 Colors input -->
-          <div class="colors-block flask"></div>
-          <div class="colors-block flask"></div>
-          <div class="colors-block flask flask--equal"></div>
+          <div class="colors-block flask tooltip"><span class="tooltiptext">Reset color</span></div>
+          <div class="colors-block flask tooltip"><span class="tooltiptext">Reset color</span></div>
+          <div class="colors-block flask flask--equal tooltip"><span class="tooltiptext">Reset color</span></div>
         </section>
 
         <section class="top-section__right">
@@ -43,7 +43,7 @@
 
       <section class="bottom-section">
         <section class="bottom-section__left">
-          <p>Pick your mix</p>
+          <p>Pick your mix (click on the flask to reset the color)</p>
           <!-- 5 random colors -->
           <div id="generatedColors" class="random-colors">
             <div class="colors-block"></div>
