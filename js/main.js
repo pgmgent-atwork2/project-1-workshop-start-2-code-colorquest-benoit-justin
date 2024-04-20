@@ -82,6 +82,9 @@ function addColorsToDom(colorsArray) {
     });
 }
 
+// Add the colors to the DOM
+addColorsToDom(colorsArray);
+
 /**
  * ******************************************************************************************
  * Get the correct color
