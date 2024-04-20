@@ -24,6 +24,10 @@ main img {
     border-color: var(--light);
 }
 
+.small-image--2 {
+    margin-bottom: 0;
+}
+
 .embeded-code {
     margin: 2rem 0;
     border: 2px solid var(--light);
