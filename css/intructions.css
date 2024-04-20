@@ -72,3 +72,14 @@ section {
 li {
     padding-bottom: 0.2rem;
 }
+
+.extra {
+    border: 2px solid var(--gold);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.extra code {
+    font-size: 0.9rem;
+}

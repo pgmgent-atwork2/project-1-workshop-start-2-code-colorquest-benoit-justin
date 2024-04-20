@@ -97,65 +97,78 @@
             <h1><span class="gold">Deel 3:</span> Interactiviteit met JavaScript</h1>
             <p>De laatste stap is het toevoegen van de JavaScript. Hierin zullen we de functionaliteit van de game toevoegen.</p>
             <ul>
-                <li><span class="gold">3.1</span> Eerst en vooral moeten we de link leggen naar het JavaScript-bestand. Voeg deze regel code toe, onderaan net voor de sluitings-body-tag. <br><code class="highlight">&lt;script src="./js/main.js">&lt;/script></code>.</li>
-                <li><span class="gold">3.2</span> Ga naar het bestand <code class="highlight">main.js</code> en zet er het volgende in: <br><code class="highlight">alert('Hello world')</code><br>Bewaar het bestand en kijk wat er in de browser gebeurt (als je deze herlaadt)</li>
-                <li><span class="gold">3.3</span> Als het werkt, mag je de regel terug wissen, we weten nu dat ons JavaScript-bestand uitgevoerd wordt. </li>
+                <li><span class="gold">3.1</span> Eerst en vooral moeten we de link leggen naar het JavaScript-bestand. Voeg deze regel code toe, onderaan net voor de sluitings-body-tag. <br><code class="highlight">&lt;script src="js/main.js">&lt;/script></code>.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/57m8xjuc/3/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">3.2</span> Ga naar het bestand <code class="highlight">main.js</code> en zet er het volgende in: <code class="highlight">alert('Hello world')</code>. Bewaar het bestand en kijk wat er in de browser gebeurt (als je deze herlaadt).</li>
+                <img class="small-image" src="../img/screenshots/Screen_9.png" alt="screen-9">
+                <li><span class="gold">3.3</span> Komt de pop-up bij jou ook tevoorschijn? Dan we weten nu dat ons JavaScript-bestand uitgevoerd wordt en gelinkt is aan ons pagina.</li>
             </ul>
-            <span class="gold">In de volgende stappen zal de code stap per stap onder elkaar in het main.js bestand worden toegevoegd. We hebben de indeling van de code op deze manier voorzien om de workshop haalbaar te houden.</span>
+            <br>
+            <p>‼️ In de volgende stappen zal de code stap per stap <span class="gold">onder elkaar</span> in het <code class="highlight">main.js</code> bestand worden toegevoegd. We hebben de indeling van de code op deze manier voorzien om de workshop haalbaar te houden.</p>
             <ul>
                 <li>
-                    <span class="gold">3.4</span> Kopieer de onderstaande code en plaats deze in het <code class="highlight">main.js</code> bestand. Hiermee selecteren we de velden waar de 5 gegenereerde kleuren verschijnen en de 3 bottles waar de kleuren geselecteerd worden (inputColors).
+                    <span class="gold">3.4</span> Kopieer de onderstaande code en plaats deze in het <code class="highlight">main.js</code> bestand. Hiermee selecteren we de velden waar de 5 gegenereerde kleuren verschijnen en de 3 flesjes waar de kleuren geselecteerd worden (inputColors).
                     Deze velden slaan we op in een array om er zo bewerkingen mee te doen. 
                     <a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank" class="sidenote">Wat is een array?</a>
                 </li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                 <li>
                     <span class="gold">3.5</span> Als volgt hebben we 2 functies nodig dat we gebruiken om een willekeurig RGB-kleur te genereren. 
                     <a href="https://www.w3schools.com/js/js_functions.asp" target="_blank" class="sidenote">Wat is een functie?</a>
                     <br>
                     In onderstaande code vind je de 2 functies dat we hiervoor nodig hebben.
                 </li>
-                <li><span class="gold">3.6</span> Dan hebben we een functie nodig dat een array van willekeurige kleuren genereert. In onderstaande code vind je de functie dat we nodig hebben om deze array te genereren. </li>
-                <li><span class="gold">3.7</span> Als volgt kunnen we de 5 kleuren laten verschijnen in het spel, dit doen we a.h.v. volgende code. </li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/1/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">3.6</span> Dan hebben we een functie nodig dat een array van willekeurige kleuren genereert. In onderstaande code vind je de functie dat we nodig hebben om deze array te genereren. Die maakt gebruik van de functies die we hebben opgebouwd in stap 3.5.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/2/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">3.7</span> Allemaal leuk en wel, maar hoe kan ik dan de kleuren opgebouwd in mijn JavaScript zien in mijn HTML? Door de kleuren toe te voegen aan de pagina.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/3/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <p>Als ik de functie even aanroep door deze lijn op het einde te zetten van mijn <code class="highlight">main.js</code>: <code class="highlight">addColorsToDom(colorsArray)</code> zie ik bij het refreshen van de pagina telkens 5 nieuwe kleuren.</p>
+                <img class="small-image" src="../img/screenshots/Screen_10.png" alt="screen-10">
             </ul>
-            <p>Ga zelf al eens kijken! Refresh de browser en er worden steeds 5 verschillende kleuren toegevoegd, zo ver zijn we al!</p>
-            <span class="gold">EXTRA!</span>
-            <p>In 'DEEL 2: stap 2.5' werd verteld dat je in het <code class="highlight">index.html</code> bestand enkele keuze bollen kon verwijderen.
-                Nu dat we deze bollen hebben ingekleurd kunnen we dit ook weer verder gaan bewerken als we willen.</p>
+
+            <div class="extra">
+                <span class="gold">EXTRA om uit te proberen!</span>
+                <p>In 'DEEL 2: stap 2.5' werd verteld dat je in het <code class="highlight">index.html</code> bestand enkele keuze bollen kon verwijderen.
+                    Nu dat we deze bollen hebben ingekleurd kunnen we dit ook weer verder gaan bewerken als we willen.</p>
+                <ul>
+                    <li>Voeg nog wat extra  <code class="highlight">&lt;div class="colors-block">&lt;/div></code> lijnen toe binnen <code class="highlight">&lt;section class="bottom-section__left"></code>, houd wel bij hoeveel lijnen er staan want dit zul je nodig hebben.</li>
+                    <li>Ga terug naar het <code class="highlight">main.js</code> bestand.</li>
+                    <li>Zoek de code terug dat we in onze laatste stap 3.7 hebben toegevoegd, vind de lijn <code class="highlight">let colorsArray = genRandomColorsArray(5);</code></li>
+                    <li>
+                        Wat valt je op? 5 = het aantal kleuren en het aantal bollen dat ter beschikking waren. Het cijfer 5 geven we in deze functie mee als een parameter.
+                        <a href="https://www.w3schools.com/js/js_function_parameters.asp" target="_blank" class="sidenote">Wat is een parameter?</a>
+                    </li>
+                    <li>Dat wil dus zeggen als we 5 verhogen, het aantal kleuren dat we genereren ook verhoogd en zo de extra bollen ook kunnen vullen.</li>
+                    <li>Probeer het even uit en plaats daarna het cijfer terug op 5 om verder te gaan met de workshop.</li>
+                    <li>Vergeet ook niet om de extra bollen terug te verwijderen zoals in stap 2.5!</li>
+                </ul>
+            </div>
+
             <ul>
-                <li>Voeg nog wat extra  <code class="highlight">&lt;div class="colors-block">&lt;/div></code> lijnen toe binnen <code class="highlight">&lt;section class="bottom-section__left"></code>, houd wel bij hoeveel lijnen er staan want dit zul je nodig hebben.</li>
-                <li>Ga terug naar het <code class="highlight">main.js</code> bestand.</li>
-                <li>Zoek de code terug dat we in onze laatste stap 3.7 hebben toegevoegd, vind de lijn <code class="highlight">let colorsArray = genRandomColorsArray(5);</code></li>
+                <li><span class="gold">3.8</span> Het volgende dat we gaan toevoegen is de gezochte kleur in het spel (het kleur in de uiterst rechtse flesje). Hiervoor gebruiken we 1 functie (mixColors) om de kleur te genereren a.h.v. 3 van de 5 kleuren uit de array die we eerder hebben gemaakt. Nadat onze kleur is gemixt door de functie kunnen we deze toevoegen aan de bottle.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/5/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <p>Ga zelf eens kijken! De app zou er nu zo moeten uitzien:</p>
+                <img class="small-image" src="../img/screenshots/Screen_11.png" alt="screen-11">
                 <li>
-                    Wat valt je op? 5 = het aantal kleuren en het aantal bollen dat ter beschikking waren. Het cijfer 5 geven we in deze functie mee als een parameter.
-                    <a href="https://www.w3schools.com/js/js_function_parameters.asp" target="_blank" class="sidenote">Wat is een parameter?</a>
+                    <span class="gold">3.9</span> Het zal je misschien opgevallen zijn na een paar keer refreshen: "Het resultaat is precies altijd een mix van de eerste drie kleuren". Inderdaad, laten we het spel toch iets moeilijker maken. In onderstaande functie word de kleuren array door elkaar geschud en meteen al opnieuw toegevoegd aan de bolletjes.
                 </li>
-                <li>Dat wil dus zeggen als we 5 verhogen, het aantal kleuren dat we genereren ook verhoogd en zo de extra bollen ook kunnen vullen.</li>
-                <li>Probeer het even uit en plaats daarna het cijfer terug op 5 om verder te gaan met de workshop.</li>
-                <li>Vergeet ook niet om de extra bollen terug te verwijderen zoals in stap 2.5!</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/6/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <p>De lijn code dat we toegevegd hadden in 3.7 om de kleurtjes te zien: <code class="highlight">addColorsToDom(colorsArray)</code> kunnen we nu verwijderen.</p>
+                <li><span class="gold">3.10</span> Het volgende dat we moeten doen is het spel nu echt interactief gaan maken. Als eerste gaan we hiervoor een functie toevoegen om de handeling te regelen om kleuren te selecteren. Ook voegen we de klik interacties aan de flesjes.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/7/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">3.11</span> Last but not least! Moeten we de 3 geselecteerde kleuren kunnen mixen en controleren of het de juiste kleur is, indien het de juiste kleur is moet er ook een punt worden toegevoegd in de score. Voeg deze code toe en als alles goed is zou het spel nu volledig moeten zijn! </li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/8/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
             </ul>
-            <p>Verder met de opbouw van het spel!</p>
-            <ul>
-                <li><span class="gold">3.8</span> Het volgende dat we gaan toevoegen is de gezochte kleur in het spel (het kleur in de uiterst rechtse bottle).  Hiervoor gebruiken we 1 functie (mixColors) om de kleur te genereren a.h.v. de 5 kleuren uit de array die we eerder hebben gemaakt. </li>
-                <li><span class="gold">3.8.1</span> Nadat onze kleur is gemixt door de functie kunnen we deze toevoegen aan de bottle, dit doen we a.h.v. onderstaande code. </li>
-            </ul>
-            <span class="gold">Ga zelf eens kijken! De app zou er nu zo moeten uitzien:</span>
-            <ul>
-                <li>
-                    <span class="gold">3.9</span> Als volgt om het spel niet te gemakkelijk te maken moeten we de kleuren door elkaar schudden en terug in de 5 bottles stoppen. Om de complexiteit te verhinderen hebben we dit in 1 functie verwerkt, in deze functie word de kleuren array door elkaar geschud en meteen al opnieuw toegevoegd aan de bottles. 
-                    <p>Voeg nu de functie toe aan de kleuren array</p> 
-                </li>
-                <li><span class="gold">3.10</span> Het volgende dat we moeten doen is het spel nu echt interactief gaan maken. Als eerste gaan we hiervoor een functie toevoegen om de handeling te regelen om kleuren te selecteren. Dit doen we met onderstaande code. </li>
-                <li><span class="gold">3.10.1</span> Voeg nu de klik interacties toe aan de bottles a.h.v. deze code. </li>
-                <li>
-                    <span class="gold">3.11</span> Last but not least!<br>
-                    Moeten we de 3 geselecteerde kleuren kunnen mixen en controleren of het de juiste kleur is, indien de juiste kleur moet er ook een punt worden toegevoegd in de score. Voeg deze code toe en als alles goed is zou het spel nu volledig moeten zijn! 
-                    <br>
-                    <span class="gold">EXTRA!</span>
-                    <p>In de functie vind je onderstaande code terug. Door het cijfer 1 te vervangen kan je de score per juist antwoord wijzigen, test het zelf even uit!</p>
-                </li>
-            </ul>
-            <span class="gold">En nu tijd om te spelen, have fun! :)</span>
+
+            <div class="extra">
+                <span class="gold">EXTRA om uit te proberen!</span>
+                <span>Door het cijfer <code class="highlight">1</code> te vervangen kan je de hoeveelheid punten per juist antwoord wijzigen, test het zelf even uit!</span>
+            </div>
         </section>
+        <p class="gold">En nu tijd om te spelen, have fun en laat je project zien! 😄</p>
+        <span>Oplossingen:</span>
+        <iframe class="embeded-code" width="100%" height="800" src="//jsfiddle.net/x3jpL9bm/embedded/js,html,css/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
     </main>
 </body>
 </html>
