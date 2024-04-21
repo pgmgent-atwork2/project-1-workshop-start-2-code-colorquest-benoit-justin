@@ -72,9 +72,14 @@
         <section class="html-css">
             <h1><span class="gold">Deel 2:</span> HTML & CSS: de structuur en stijl</h1>
             <p>De basis van de game is de HTML en CSS. Hierin zullen we de structuur van de game opbouwen en de stijl toevoegen.</p>
+            <p>
+                ‼️ In de code worden telkens comments voorzien, in Visual Studio Code worden deze in het groen weergegeven. Weet dat dit geen code is dat word uitgevoerd maar deze worden gebruikt om uitleg te geven en om overzichtelijker te kunnen coderen.
+                <a href="https://www.w3schools.com/html/html_comments.asp" target="_blank" class="sidenote">Wat zijn comments?</a>
+            </p>
             <ul>
                 <li><span class="gold">2.1</span> Kopieer de onderstaande code in het bestand <code class="highlight">index.html</code>. Dit is een standaard startstructuur voor HTML.</li>
                 <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/poxrhnL8/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <p>‼️ Vergeet niet om telkens bij toevoeging of wijziging van code je bestand op te slaan. Dit doe je met <code class="highlight">CTRL + S</code> op windows en <code class="highlight">CMD + S</code> op mac. </p>
                 <li><span class="gold">2.2</span> Kopieer de onderstaande code in het bestand <code class="highlight">main.css</code>. Dit bevat alvast een aantal basisstijlen die we later zullen nodig hebben voor de look & feel van onze app. Zowel globaal (bv. hoe groot mag de leestekst zijn) als per sectie (bv. hoeveel plaats er komt tussen elke sectie).</li>
                 <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/khjLvqaf/embedded/css/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                 <li><span class="gold">2.3</span> Ververs de pagina in de browser en bekijk het resultaat. (de url is hoogstwaarschijnlijk: <a href="http://127.0.0.1:5500/" target="_blank">http://127.0.0.1:5500</a>). Als alles goed is, ziet het er nu zo uit. Een volledig donker gekleurd vlak zoals de achtergrond van deze website.</li>
@@ -84,10 +89,10 @@
                     <a href="https://www.w3schools.com/colors/colors_hsl.asp" target="_blank" class="sidenote">Wat is hsl?</a>
                 </li>
                 <iframe class="embeded-code" width="100%" height="300" src="//jsfiddle.net/cqgz1okb/2/embedded/result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-                <li><span class="gold">2.4</span> We gaan de webpagina nu indelen in twee helften met daarin nog twee sub-helften waar de inhoud kan komen. Voeg onderstaande elementen toe, en plaats ze tussen de openings <code class="highlight">&lt;main></code>-tag en sluitings <code class="highlight">&lt;/main></code>-tag </li>
+                <li><span class="gold">2.4</span> We gaan de webpagina nu indelen in twee helften met daarin nog twee sub-helften waar de inhoud kan komen. Voeg onderstaande elementen toe in het <code class="highlight">index.html</code> bestand, en plaats ze tussen de openings <code class="highlight">&lt;main></code>-tag en sluitings <code class="highlight">&lt;/main></code>-tag. </li>
                 <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/qkduev2m/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-                <li><span class="gold">2.5</span> Voeg de onderstaande code toe tussen de juiste <code class="highlight">&lt;section></code>-tag en sluitings <code class="highlight">&lt;/section></code>-tag. "Maar ik zie geen kleurtjes?" Het zijn grotendeels elementen die leeg zijn en worden later gevuld met kleurtjes aan de hand van Javascript in deel 3.</li>
-                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/cqgz1okb/8/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">2.5</span> Als volgt gaan we de secties gaan opvullen, kopieer de onderstaande code en vervang nu de 'sections' tussen de <code class="highlight">&lt;main></code>-tag en sluitings <code class="highlight">&lt;/main></code>-tag. "Maar ik zie geen kleurtjes?" Het zijn grotendeels elementen die leeg zijn en worden later gevuld met kleurtjes aan de hand van Javascript in deel 3.</li>
+                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/dexanscript/3qnkbau6/4/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                 <li>Probeer het uit: Wat als we 1, 2 of zelfs 3 <code class="highlight">&lt;div class="colors-block">&lt;/div></code> binnen <code class="highlight">&lt;section class="bottom-section__left"></code> verwijderen? Wat gebeurt er dan? De bolletjes beneden links verdwijnen bij het refreshen van de pagina. Laten we ze terug zetten tot we er weer 5 hebben.</li>
                 <img class="small-image" src="../img/screenshots/Screen_8.png" alt="screen-8">
                 <li><span class="gold">Tijd om wat kleurtjes toe te voegen, nee?</span></li>
@@ -97,11 +102,11 @@
             <h1><span class="gold">Deel 3:</span> Interactiviteit met JavaScript</h1>
             <p>De laatste stap is het toevoegen van de JavaScript. Hierin zullen we de functionaliteit van de game toevoegen.</p>
             <ul>
-                <li><span class="gold">3.1</span> Eerst en vooral moeten we de link leggen naar het JavaScript-bestand. Voeg deze regel code toe, onderaan net voor de sluitings-body-tag. <br><code class="highlight">&lt;script src="js/main.js">&lt;/script></code>.</li>
-                <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/57m8xjuc/3/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                <li><span class="gold">3.1</span> Eerst en vooral moeten we de link leggen naar het JavaScript-bestand in het <code class="highlight">index.html</code> bestand. Voeg deze regel code toe, onderaan net voor de sluitings-body-tag. <br><code class="highlight">&lt;script src="js/main.js">&lt;/script></code>.</li>
+                <img class="small-image" src="../img/screenshots/Screen_13.png" alt="screen-13">
                 <li><span class="gold">3.2</span> Ga naar het bestand <code class="highlight">main.js</code> en zet er het volgende in: <code class="highlight">alert('Hello world')</code>. Bewaar het bestand en kijk wat er in de browser gebeurt (als je deze herlaadt).</li>
                 <img class="small-image" src="../img/screenshots/Screen_9.png" alt="screen-9">
-                <li><span class="gold">3.3</span> Komt de pop-up bij jou ook tevoorschijn? Dan we weten nu dat ons JavaScript-bestand uitgevoerd wordt en gelinkt is aan ons pagina.</li>
+                <li><span class="gold">3.3</span> Komt de pop-up bij jou ook tevoorschijn? Dan weten we nu dat ons JavaScript-bestand uitgevoerd wordt en gelinkt is aan onze pagina. Deze regel mag je nu ook wissen vooraleer je verder gaat.</li>
             </ul>
             <br>
             <p>‼️ In de volgende stappen zal de code stap per stap <span class="gold">onder elkaar</span> in het <code class="highlight">main.js</code> bestand worden toegevoegd. We hebben de indeling van de code op deze manier voorzien om de workshop haalbaar te houden.</p>
@@ -125,27 +130,6 @@
                 <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/dexanscript/0kpzqu3d/3/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                 <p>Ga zelf al eens kijken! Refresh de browser en er worden steeds 5 verschillende kleuren toegevoegd, zo ver zijn we al!</p>
                 <img class="small-image" src="../img/screenshots/Screen_10.png" alt="screen-10">
-            </ul>
-
-            <div class="extra">
-                <span class="gold">EXTRA om uit te proberen!</span>
-                <p>In 'DEEL 2: stap 2.5' werd verteld dat je in het <code class="highlight">index.html</code> bestand enkele keuze bollen kon verwijderen.
-                    Nu dat we deze bollen hebben ingekleurd kunnen we dit ook weer verder gaan bewerken als we willen.</p>
-                <ul>
-                    <li>Voeg nog wat extra  <code class="highlight">&lt;div class="colors-block">&lt;/div></code> lijnen toe binnen <code class="highlight">&lt;section class="bottom-section__left"></code>, houd wel bij hoeveel lijnen er staan want dit zul je nodig hebben.</li>
-                    <li>Ga terug naar het <code class="highlight">main.js</code> bestand.</li>
-                    <li>Zoek de code terug dat we in onze laatste stap 3.7 hebben toegevoegd, vind de lijn <code class="highlight">let colorsArray = genRandomColorsArray(5);</code></li>
-                    <li>
-                        Wat valt je op? 5 = het aantal kleuren en het aantal bollen dat ter beschikking waren. Het cijfer 5 geven we in deze functie mee als een parameter.
-                        <a href="https://www.w3schools.com/js/js_function_parameters.asp" target="_blank" class="sidenote">Wat is een parameter?</a>
-                    </li>
-                    <li>Dat wil dus zeggen als we 5 verhogen, het aantal kleuren dat we genereren ook verhoogd en zo de extra bollen ook kunnen vullen.</li>
-                    <li>Probeer het even uit en plaats daarna het cijfer terug op 5 om verder te gaan met de workshop.</li>
-                    <li>Vergeet ook niet om de extra bollen terug te verwijderen zoals in stap 2.5!</li>
-                </ul>
-            </div>
-
-            <ul>
                 <li><span class="gold">3.8</span> Het volgende dat we gaan toevoegen is de gezochte kleur in het spel (het kleur in de uiterst rechtse flesje). Hiervoor gebruiken we 1 functie (mixColors) om de kleur te genereren a.h.v. 3 van de 5 kleuren uit de array die we eerder hebben gemaakt. Nadat onze kleur is gemixt door de functie kunnen we deze toevoegen aan de bottle.</li>
                 <iframe class="embeded-code" width="100%" height="500" src="//jsfiddle.net/nx2m5gz9/5/embedded/js/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                 <p>Ga zelf eens kijken! De app zou er nu zo moeten uitzien:</p>
@@ -161,8 +145,28 @@
             </ul>
 
             <div class="extra">
+                <span class="gold">EXTRA maak het spel moeilijker!</span>
+                <p>In 'DEEL 2: stap 2.5' werd verteld dat je in het <code class="highlight">index.html</code> bestand enkele keuze bollen kon verwijderen.
+                    Nu dat we deze bollen hebben ingekleurd kunnen we dit ook weer verder gaan bewerken en het spel moeilijker maken door meer kleuren ter beschikking te gaan stellen.</p>
+                <ul>
+                    <li>In stap 2.5 kon je in het <code class="highlight">index.html</code> bestand enkele lijnen <code class="highlight">&lt;div class="colors-block">&lt;/div></code> binnen <code class="highlight">&lt;section class="bottom-section__left"></code> verwijderen, voeg er nu wat extra lijnen aan toe in plaats van ze te verwijderen. Zorg ervoor dat je meerdere bollen tevoorschijn ziet komen. Belangrijk, houd wel bij hoeveel lijnen er staan want dit zul je nodig hebben.</li>
+                    <li>Ga terug naar het <code class="highlight">main.js</code> bestand.</li>
+                    <li>Zoek de code terug dat we in onze laatste stap 3.7 hebben toegevoegd, vind de lijn <code class="highlight">let colorsArray = genRandomColorsArray(5);</code></li>
+                    <li>
+                        Wat valt je op? 5 = het aantal kleuren en het aantal bollen dat ter beschikking waren. Het cijfer 5 geven we in deze functie mee als een parameter.
+                        <a href="https://www.w3schools.com/js/js_function_parameters.asp" target="_blank" class="sidenote">Wat is een parameter?</a>
+                    </li>
+                    <li>Dat wil dus zeggen als we 5 verhogen, het aantal kleuren dat we genereren ook verhoogd en zo de extra bollen ook kunnen vullen. Belangrijk hier is dat het cijfer gelijk is aan het aantal bollen dat je hebt toegevoegd anders klopt het spel niet meer. </li>
+                </ul>
+            </div>
+
+            <div class="extra">
                 <span class="gold">EXTRA om uit te proberen!</span>
-                <span>Door het cijfer <code class="highlight">1</code> te vervangen kan je de hoeveelheid punten per juist antwoord wijzigen, test het zelf even uit!</span>
+                <p>We kunnen ook de punten per juist antwoord wijzigen, test het zelf even uit!</p>
+                <ul>
+                    <li>In stap 3.11 hebben we de functie toegevoegd om de score te regelen, zoek deze terug.</li>
+                    <li>Door het cijfer <code class="highlight">1</code> te vervangen waar we de score toevoegen aan de HTML kan je de hoeveelheid punten per juist antwoord wijzigen. </li>
+                </ul>
                 <img class="small-image small-image--2" src="../img/screenshots/Screen_12.png" alt="screen-12">
             </div>
         </section>
